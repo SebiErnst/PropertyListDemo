@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         textView.text.append("Documents directory path is \(documentsPath).\n\n")
         albumsDocPath = NSURL(fileURLWithPath: documentsPath).appendingPathComponent("albums.plist")!.path
-        textView.text.append("Looking for plist file at \(documentsPath).\n\n")
+        textView.text.append("Looking for plist file at \(albumsDocPath).\n\n")
         let fileManager = FileManager.default
         if !fileManager.fileExists(atPath: albumsDocPath) {
             textView.text.append("Not found, copying from bundle...\n\n")
